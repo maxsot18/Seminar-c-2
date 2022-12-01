@@ -11,13 +11,19 @@ int Prompt(string message)
     return answer;
 
 }
-int num1 = Prompt("Enter a first number ");
-int num2 = Prompt("Enter a second number ");
-int num3 = Prompt("Enter a third number ");
-int num4 = Prompt("Enter a fourth number ");
-int num5 = Prompt("Enter a fifst number ");
+int quant = Prompt("Enter a quantity of number ");
+int i = 0;
+double sum = 0;
 
-double sum = num1 + num2 + num3 + num4 + num5;
 
-double average = sum / 5;
-Console.WriteLine($"sum is {sum}, average is {average}");
+while(i < quant)
+{
+    int value = Prompt($"Enter {i} number ");
+    sum = sum + value;
+    i++;
+}
+
+
+
+double average = sum / i;
+Console.WriteLine($"sum is {sum}, average is {average:f2}");
